@@ -23,7 +23,6 @@ public class EmployeeService {
     }
 
     public Employee getEmployee(String employee_id) {
-        //return employeeRepository.findByEmployee_id(employee_id).get(1);
         return employeeRepository.findById(employee_id);
     }
 

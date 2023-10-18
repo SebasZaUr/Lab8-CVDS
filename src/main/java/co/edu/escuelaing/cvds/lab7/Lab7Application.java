@@ -28,6 +28,7 @@ public class Lab7Application {
 			System.out.println("Adding Configurations....");
 			configurationService.addConfiguration(new Configuration("premio", "800000"));
 			employeeService.addEmployee(new Employee("1","cesar","amaya","president",1000000000));
+			employeeService.addEmployee(new Employee("2","sebastian","zamora","vice precident",600000));
 
 			System.out.println("\nGetting all configurations....");
 			configurationService.getAllConfigurations().forEach(configuration -> System.out.println(configuration));
