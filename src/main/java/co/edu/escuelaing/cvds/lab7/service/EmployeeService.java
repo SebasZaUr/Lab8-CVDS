@@ -38,7 +38,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
     public void deleteEmployee(Long id) {
-        employeeRepository.deleteById(id);
+        employeeRepository.deleteById(Long.valueOf(id));
     }
 
     //public String getPremio() {

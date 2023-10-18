@@ -48,8 +48,8 @@ public class EmployeeController {
  //       employeeService.deleteEmployee(id);
  //       return "redirect:/employee";
  //   }
- @RequestMapping(value="/deleteemp/{id}",method = RequestMethod.GET)
- public String delete(@PathVariable Long id){
+ @PostMapping("/delete/{id}")
+ public String deleteEmployee(@PathVariable long id){
      employeeService.deleteEmployee(id);
      return "redirect:/employee";
  }

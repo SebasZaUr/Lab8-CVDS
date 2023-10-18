@@ -35,14 +35,13 @@
             <input type="text" class="form-control" id="role" name="role" th:field="*{role}" required>
         </div>
 
-        <button type="submit" class="btn btn-info col-2">Actualizar Empleado</button>
+        <button type="submit" class="btn btn-info col-2">Actualizar</button>
     </form>
 
 
 
     <hr>
-
-    <a href="@{/employee}">Volver a la Lista de Empleados</a>
+    <a th:href = "@{/employee}"> Back to Employee List</a>
 </div>
 </body>
 </html>
