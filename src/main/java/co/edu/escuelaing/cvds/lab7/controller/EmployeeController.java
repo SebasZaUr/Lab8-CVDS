@@ -5,10 +5,7 @@ import co.edu.escuelaing.cvds.lab7.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,7 +28,6 @@ public class EmployeeController {
     }
     @PostMapping("/save")
     public String saveEmploye(@ModelAttribute("employee") Employee employee) {
-        // save Course to database
         employeeService.addEmployee(employee);
         return "redirect:/employee";
     }
@@ -43,8 +39,18 @@ public class EmployeeController {
         return "updateEmployee";
     }
     @PostMapping("/update")
-    public String updateEmploye(@ModelAttribute("employee") Employee employee) {
+    public String updateEmployee(@ModelAttribute("employee") Employee employee) {
         employeeService.updateEmployee(employee);
         return "redirect:/employee";
     }
+ //   @PostMapping("/delete/{id}")
+ //   public String deleteEmployee(@PathVariable Long id) {
+ //       employeeService.deleteEmployee(id);
+ //       return "redirect:/employee";
+ //   }
+ @RequestMapping(value="/deleteemp/{id}",method = RequestMethod.GET)
+ public String delete(@PathVariable Long id){
+     employeeService.deleteEmployee(id);
+     return "redirect:/employee";
+ }
 }
