@@ -43,14 +43,9 @@ public class EmployeeController {
         employeeService.updateEmployee(employee);
         return "redirect:/employee";
     }
- //   @PostMapping("/delete/{id}")
- //   public String deleteEmployee(@PathVariable Long id) {
- //       employeeService.deleteEmployee(id);
- //       return "redirect:/employee";
- //   }
- @PostMapping("/delete/{id}")
- public String deleteEmployee(@PathVariable long id){
-     employeeService.deleteEmployee(id);
-     return "redirect:/employee";
- }
+     @RequestMapping("/delete/{id}")
+     public String deleteEmployee(@PathVariable long id){
+         employeeService.deleteEmployee(id);
+         return "redirect:/employee";
+     }
 }
