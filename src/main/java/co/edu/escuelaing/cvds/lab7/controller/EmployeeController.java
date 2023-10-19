@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class EmployeeController {
@@ -34,7 +35,7 @@ public class EmployeeController {
     @GetMapping("/update/{id}")
     public String showFormForUpdate(@PathVariable( value = "id") String id, Model model) {
 
-        Employee emp = employeeService.getEmployee(id);
+        Optional<Employee> emp = employeeService.getEmployee(id);
         model.addAttribute("employee", emp);
         return "updateEmployee";
     }
@@ -43,8 +44,9 @@ public class EmployeeController {
         employeeService.updateEmployee(employee);
         return "redirect:/employee";
     }
+
      @RequestMapping("/delete/{id}")
-     public String deleteEmployee(@PathVariable long id){
+     public String deleteEmployee(@PathVariable String id){
          employeeService.deleteEmployee(id);
          return "redirect:/employee";
      }
