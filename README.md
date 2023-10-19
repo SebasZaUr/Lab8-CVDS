@@ -1,5 +1,5 @@
 # Lab7
 
-##Entregador Por:
+## Entregador Por:
 *  **Sebastian Zamora**
 *  **Cesar Amaya**
